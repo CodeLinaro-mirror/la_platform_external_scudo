@@ -129,7 +129,6 @@ cc_defaults {
         "standalone/mem_map_linux.cpp",
         "standalone/release.cpp",
         "standalone/report.cpp",
-        "standalone/rss_limit_checker.cpp",
         "standalone/string_utils.cpp",
         "standalone/timing.cpp",
         "standalone/wrappers_c_bionic.cpp"
@@ -251,15 +250,6 @@ cc_test {
         "standalone/tests/timing_test.cpp",
         "standalone/tests/tsd_test.cpp",
         "standalone/tests/vector_test.cpp",
-    ],
-}
-
-cc_test {
-    name: "scudo_hooks_unit_tests",
-    defaults: ["scudo_unit_tests_default"],
-    host_supported: true,
-    srcs: [
-        "standalone/tests/scudo_hooks_test.cpp",
     ],
 }
 
