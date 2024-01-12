@@ -202,9 +202,6 @@ cc_library_static {
       "//frameworks/libs/native_bridge_support/libc:__subpackages__",
       "//system/core/debuggerd:__subpackages__",
     ],
-    apex_available: [
-        "com.android.runtime",
-    ],
 }
 
 cc_library_static {
