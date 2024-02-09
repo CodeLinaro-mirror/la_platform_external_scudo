@@ -202,6 +202,9 @@ cc_library_static {
       "//frameworks/libs/native_bridge_support/libc:__subpackages__",
       "//system/core/debuggerd:__subpackages__",
     ],
+    apex_available: [
+        "com.android.runtime",
+    ],
 }
 
 cc_library_static {
@@ -325,6 +328,7 @@ cc_test {
 
 cc_binary {
     name: "size_map_gen",
+    defaults: ["scudo_config_defaults"],
     host_supported: true,
     static_libs: ["libscudo"],
     include_dirs: [
