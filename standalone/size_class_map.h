@@ -254,8 +254,8 @@ struct AndroidSizeClassConfig {
   static const uptr NumBits = 7;
   static const uptr MinSizeLog = 4;
   static const uptr MidSizeLog = 6;
-  static const uptr MaxSizeLog = 18;
-  static const u32 MaxNumCachedHint = 13;
+  static const uptr MaxSizeLog = 16;
+  static const u16 MaxNumCachedHint = 13;
   static const uptr MaxBytesCachedLog = 13;
 
   static constexpr uptr Classes[] = {
