@@ -107,8 +107,9 @@ struct AndroidNormalConfig {
     static const uptr GroupSizeLog = 18U;
     typedef uptr CompactPtrT;
 #endif
-    static const s32 MinReleaseToOsIntervalMs = 1000;
+    static const s32 MinReleaseToOsIntervalMs = -1;
     static const s32 MaxReleaseToOsIntervalMs = 1000;
+    static const s32 DefaultReleaseToOsIntervalMs = 1000;
   };
 #if SCUDO_CAN_USE_PRIMARY64
   template <typename Config> using PrimaryT = SizeClassAllocator64<Config>;
@@ -122,8 +123,9 @@ struct AndroidNormalConfig {
       static const u32 QuarantineSize = 32U;
       static const u32 DefaultMaxEntriesCount = 32U;
       static const uptr DefaultMaxEntrySize = 2UL << 20;
-      static const s32 MinReleaseToOsIntervalMs = 0;
+      static const s32 MinReleaseToOsIntervalMs = -1;
       static const s32 MaxReleaseToOsIntervalMs = 1000;
+      static const s32 DefaultReleaseToOsIntervalMs = 0;
     };
     template <typename Config> using CacheT = MapAllocatorCache<Config>;
   };
@@ -131,7 +133,7 @@ struct AndroidNormalConfig {
   template <typename Config> using SecondaryT = MapAllocator<Config>;
 };
 
-struct AndroidSvelteConfig {
+struct AndroidLowMemoryConfig {
 #if defined(__aarch64__)
   static const bool MaySupportMemoryTagging = true;
 #else
@@ -171,8 +173,8 @@ struct AndroidSvelteConfig {
   template <typename Config> using SecondaryT = MapAllocator<Config>;
 };
 
-#if defined(SVELTE_ENABLED)
-typedef AndroidSvelteConfig Config;
+#if defined(SCUDO_LOW_MEMORY)
+typedef AndroidLowMemoryConfig Config;
 #else
 typedef AndroidNormalConfig Config;
 #endif
