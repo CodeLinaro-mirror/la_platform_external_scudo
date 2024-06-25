@@ -152,7 +152,7 @@ struct AndroidNormalConfig {
     static const uptr GroupSizeLog = 18U;
     typedef uptr CompactPtrT;
 #endif
-    static const s32 MinReleaseToOsIntervalMs = -1;
+    static const s32 MinReleaseToOsIntervalMs = 1000;
     static const s32 MaxReleaseToOsIntervalMs = 1000;
     static const s32 DefaultReleaseToOsIntervalMs = 1000;
   };
@@ -168,7 +168,7 @@ struct AndroidNormalConfig {
       static const u32 QuarantineSize = 32U;
       static const u32 DefaultMaxEntriesCount = 32U;
       static const uptr DefaultMaxEntrySize = 2UL << 20;
-      static const s32 MinReleaseToOsIntervalMs = -1;
+      static const s32 MinReleaseToOsIntervalMs = 1000;
       static const s32 MaxReleaseToOsIntervalMs = 1000;
       static const s32 DefaultReleaseToOsIntervalMs = 0;
     };
