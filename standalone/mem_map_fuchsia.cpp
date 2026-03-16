@@ -218,9 +218,6 @@ void MemMapFuchsia::releaseAndZeroPagesToOSImpl(uptr From, uptr Size) {
   CHECK_EQ(Status, ZX_OK);
 }
 
-// Not supported by default
-s64 getResidentPagesImpl(UNUSED uptr From, UNUSED uptr Size) { return -1; }
-
 void MemMapFuchsia::setMemoryPermissionImpl(uptr Addr, uptr Size, uptr Flags) {
   const bool NoAccess = !!(Flags & MAP_NOACCESS);
 
