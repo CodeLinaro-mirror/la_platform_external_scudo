@@ -81,6 +81,9 @@ cc_defaults {
         malloc_low_memory: {
             cflags: ["-DSCUDO_LOW_MEMORY"],
         },
+        malloc_scudo_tsds_max: {
+            cflags: ["-DMALLOC_SCUDO_TSDS_MAX"],
+        },
     },
 }
 
@@ -106,7 +109,6 @@ cc_defaults {
     defaults: [
         "scudo_config_defaults",
         "scudo_warning_defaults",
-        "x86_disable_fdo_profile_sample_accurate",
     ],
     native_coverage: false,
     ramdisk_available: true,
@@ -396,6 +398,9 @@ cc_defaults {
     product_variables: {
         malloc_low_memory: {
             cflags: ["-DSCUDO_LOW_MEMORY_CHECK"],
+        },
+        malloc_scudo_tsds_max: {
+            cflags: ["-DMALLOC_SCUDO_TSDS_MAX"],
         },
     },
 }
